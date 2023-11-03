@@ -57,10 +57,11 @@ app.get('/', (req, res) => {
   const buttons = [
     { label: 'Users', url: '/users' },
     { label: 'About Me!', url: '/about' },
-    { label: 'User', url: '/data/invoiceNo/:index' },
+    { label: 'Index Search', url: '/data/invoiceNo/:index' },
     { label: 'Search Product Line', url: ' /search/produceLine' },
     { label: 'Show all data replace 0-zero', url: ' /searchAllReplaceZero' },
-    { label: 'Show all data without Zero rating', url: ' /searchAllWithoutZero' }
+    { label: 'Show all data without Zero rating', url: ' /searchAllWithoutZero' },
+    { label: 'Search All Data', url: '/searchAll' }
   ];
 
   res.render('index', { button: buttons, title: 'root' });
@@ -213,6 +214,29 @@ app.get('/searchAllWithoutZero', (req, res) => {
         });
       } else {
         res.render('error', { title: 'Error', message: 'No Matching Product Lines Found' });
+      }
+    }
+  });
+});
+
+
+
+//all data 
+app.get('/searchAll', (req, res) => {
+  fs.readFile(__dirname + '/SuperSales.json', 'utf8', (err, data) => {
+    if (err) {
+      res.render('error', { title: 'Error', message: 'Data Not Loaded: ' + err });
+    } else {
+      const jsonData = JSON.parse(data);
+
+      // Filter invoices with a "rating" not equal to zero
+      if (jsonData.length > 0) {
+        res.render('productlineoutput', {
+          title: 'Show all data',
+          productLine: jsonData,
+        });
+      } else {
+        res.render('error', { title: 'Error', message: 'Not Found' });
       }
     }
   });
