@@ -1,0 +1,152 @@
+/* Reset and global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.zero {
+    background-color: rgb(9, 1, 1);
+    color: rgb(235, 8, 8);
+    font-weight: bold;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Footer styles */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 7px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    top: 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+  
+}
+
+.header h2 {
+    margin-left: 300px; /* Add a little margin to the left of the heading */
+}
+
+
+
+.footer {
+    background-color: #333;
+    color:  #52f673;;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    bottom: 0;
+}
+
+/* Content styles */
+.content {
+    max-width: 30000px;
+    margin: 100px auto 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(8, 217, 175, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+/* Typography styles */
+h1 {
+    color: #0576ef;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #52f673;
+    font-size: 24px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+i {
+    font-style: italic;
+    color: #555;
+}
+
+/* Excel table styles */
+.excel-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.excel-table th, .excel-table td {
+    border: 1px solid #000;
+    padding: 12px;
+    text-align: center;
+}
+
+.excel-table th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.excel-table th:hover {
+    background-color: #0056b3;
+}
+
+.excel-table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+
+.excel-table tbody tr:hover {
+    background-color: #e3e3e3;
+}
+
+/* Button styles */
+.button-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.styled-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.styled-button:hover {
+    background-color: #10e490;
+}

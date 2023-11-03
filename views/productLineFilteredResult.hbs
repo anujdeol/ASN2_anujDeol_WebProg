@@ -1,0 +1,48 @@
+<h1>{{title}}</h1>
+{{#if productLine.length}}
+<table class="excel-table">
+  <thead>
+    <tr >
+      <th>Product Line</th>
+      <th>Invoice ID</th>
+      <th>Branch</th>
+      <th>City</th>
+      <th>Customer Type</th>
+      <th>Name</th>
+      <th>Image</th>
+      <th>Unit Price</th>
+      <th>Tax (5%)</th>
+      <th>Total</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Payment Mode</th>
+      <th>COGS</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each productLine}}
+    <tr class="{{#if (isZero this.Rating)}}zero{{/if}}" >
+      <td>{{this.[Product line]}}</td>
+      <td>{{this.[Invoice ID]}}</td>
+      <td>{{this.Branch}}</td>
+      <td>{{this.City}}</td>
+      <td>{{this.[Customer type]}}</td>
+      <td>{{this.name}}</td>
+      <td><img src="{{image}}" alt="Product Image" width="100"></td>
+      <td>{{this.[Unit price]}}</td>
+      <td>{{this.[Tax 5%]}}</td>
+      <td>{{this.Total}}</td>
+      <td>{{this.Date}}</td>
+      <td>{{this.Time}}</td>
+      <td>{{this.Payment}}</td>
+      <td>{{this.cogs}}</td>
+      <td class="{{#if (isZero this.Rating)}}zero{{/if}}">{{filterZero this.Rating}}</td>
+
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+{{else}}
+  <p>No matching product lines found.</p>
+{{/if}}

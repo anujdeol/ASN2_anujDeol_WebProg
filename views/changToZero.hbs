@@ -1,0 +1,21 @@
+<ul>
+  {{#each productLine}}
+    <li>
+      <h2>Product Line: {{this['Product line']}}</h2>
+      <h2>Invoice ID: {{this['Invoice ID']}}</h2>
+      <h2>Branch: {{this.Branch}}</h2>
+      <h2>City: {{this.City}}</h2>
+      <h2>Customer Type: {{this['Customer type']}}</h2>
+      <h2>Name: {{this.name}}</h2>
+      <img src="{{this.image}}" alt="Product Image">
+      <h2>Unit Price: {{this['Unit price']}}</h2>
+      <h2>Tax (5%): {{this['Tax 5%']}}</h2>
+      <h2>Total: {{this.Total}}</h2>
+      <h2>Date: {{this.Date}}</h2>
+      <h2>Time: {{this.Time}}</h2>
+      <h2>Payment Mode: {{this.Payment}}</h2>
+      <h2>COGS: {{this.cogs}}</h2>
+      <h2>Rating: {{filterZero this.Rating}}</h2>
+    </li>
+  {{/each}}
+</ul>
