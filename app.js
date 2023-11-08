@@ -32,7 +32,6 @@ app.engine('.hbs', exphbs.engine({
         console.log("FILTERZERO CALLED");
         return 'zero';
       }
-     
       return val;
     }
     , 
@@ -63,7 +62,6 @@ app.get('/', (req, res) => {
     { label: 'Show all data without Zero rating', url: ' /searchAllWithoutZero' },
     { label: 'Search All Data', url: '/searchAll' }
   ];
-
   res.render('index', { button: buttons, title: 'root' });
 });
 
@@ -99,7 +97,7 @@ app.get('/data', (req, res) => {
 
 // Define a dynamic route to retrieve InvoiceNo by index
 app.get('/data/invoiceNo/:index', (req, res) => {
-  const index = req.params.index.substring(1);
+  //const index = req.params.index.substring(1);
   
 
   fs.readFile(__dirname + '/SuperSales.json', 'utf8', (err, data) => {
